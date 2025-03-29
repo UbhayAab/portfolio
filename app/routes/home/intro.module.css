@@ -339,6 +339,12 @@
   margin-top: 2rem;
   display: flex;
   justify-content: center;
+  opacity: 0;
+  transition: opacity var(--durationL) var(--bezierFastoutSlowin) 0.1s;
+}
+
+.cta[data-status='entered'] {
+  opacity: 1;
 }
 
 .button {
@@ -349,9 +355,42 @@
   text-decoration: none;
   border-radius: 4px;
   font-weight: 500;
+  position: relative;
+  overflow: hidden;
   transition: transform 0.3s ease;
-}
 
-.button:hover {
-  transform: translateY(-2px);
+  &::after {
+    content: '';
+    background: var(--background);
+    animation-duration: 1.5s;
+    animation-delay: var(--delay);
+    animation-fill-mode: forwards;
+    animation-timing-function: var(--bezierFastoutSlowin);
+    transform-origin: left;
+    transform: scale3d(0, 1, 1);
+    position: absolute;
+    inset: 0 -0.02em 0 0;
+    z-index: var(--zIndex1);
+    will-change: transform;
+  }
+
+  &[data-status='entering'] {
+    @media (--mediaUseMotion) {
+      &::after {
+        animation-name: reveal;
+      }
+    }
+  }
+
+  &[data-status='entered'] {
+    &::after {
+      opacity: 1;
+      transform: scale3d(0, 0, 1);
+      transform-origin: right;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
 }

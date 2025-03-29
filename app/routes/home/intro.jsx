@@ -110,7 +110,7 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
                   ))}
                 </div>
               </Heading>
-              <div className={styles.cta}>
+              <div className={styles.cta} data-status={status}>
                 <RouterLink
                   to="/#contact"
                   className={styles.button}
