@@ -17,6 +17,8 @@ import { Profile } from './profile';
 import { useEffect, useRef, useState } from 'react';
 import config from '~/config.json';
 import styles from './home.module.css';
+import { NGOSection } from '~/components/ngo-section';
+import { Experience } from '~/components/experience';
 
 // Prefetch draco decoader wasm
 export const links = () => {
@@ -50,10 +52,9 @@ export const Home = () => {
   const [scrollIndicatorHidden, setScrollIndicatorHidden] = useState(false);
   const intro = useRef();
   const about = useRef();
-  const details = useRef();
 
   useEffect(() => {
-    const sections = [intro, about, details];
+    const sections = [intro, about];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -100,12 +101,11 @@ export const Home = () => {
         visible={visibleSections.includes(about.current)}
         id="about"
       />
-      <Profile
-        sectionRef={details}
-        visible={visibleSections.includes(details.current)}
-        id="details"
-      />
+      <NGOSection id="ngo" />
+      <Experience id="experience" />
       <Footer />
     </div>
   );
 };
+
+export default Home;

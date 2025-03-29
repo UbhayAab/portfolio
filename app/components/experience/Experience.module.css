@@ -1,0 +1,310 @@
+.experience {
+  padding: 100px 24px 24px 24px;
+  background-color: var(--background);
+  color: var(--text);
+  width: 100%;
+}
+
+.mainTitle {
+  font-size: 4.5rem;
+  margin-bottom: 32px;
+  text-align: center;
+  color: var(--text);
+  font-weight: var(--fontWeightBold);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 50px;
+  margin-top: 48px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4px 4px;
+}
+
+.section {
+  margin-bottom: 64px;
+}
+
+.sectionTitle {
+  font-size: 4rem;
+  margin-bottom: 10px;
+  color: var(--text);
+  position: relative;
+  display: inline-block;
+  letter-spacing: -0.01em;
+  margin-top: 0px;
+  padding-top: 36px;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 80px;
+  height: 6px;
+  background-color: var(--accent);
+  border-radius: 3px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 48px;
+}
+
+.companyItem {
+  background-color: var(--backgroundLight);
+  border-radius: 56px;
+  padding: 48px;
+  transition: all 0.4s cubic-bezier(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+
+.companyItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background-color: var(--accent);
+  transform: scaleY(0);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform-origin: top;
+  margin-bottom: 10px;
+}
+
+.companyItem:hover {
+  transform: translateX(15px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.companyItem:hover::before {
+  transform: scaleY(1);
+}
+
+.companyName {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: var(--text);
+  font-weight: var(--fontWeightBold);
+  letter-spacing: -0.01em;
+}
+
+.positions {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.positionItem {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--divider);
+}
+
+.positionItem:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.timelineMeta {
+  text-align: left;
+}
+
+.period {
+  font-size: 1.25rem;
+  font-weight: var(--fontWeightBold);
+  color: var(--accent);
+  margin-bottom: var(--space-m);
+  letter-spacing: 0.02em;
+}
+
+.timelineContent {
+  position: relative;
+}
+
+.role {
+  font-size: 1.6rem;
+  margin-bottom: var(--space-m);
+  color: var(--text);
+  font-weight: var(--fontWeightBold);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.description {
+  color: var(--textBody);
+  /* Increased line-height to improve readability */
+  line-height: 1.9;
+  font-size: 1.2rem;
+  letter-spacing: 0.01em;
+}
+
+.education {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.educationItem {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 48px;
+  padding: 48px;
+  background-color: var(--backgroundLight);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  overflow: hidden;
+  margin-top: 1px;
+}
+
+.educationItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background-color: var(--accent);
+  transform: scaleY(0);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform-origin: top;
+}
+
+.educationItem:hover {
+  transform: translateX(15px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.educationItem:hover::before {
+  transform: scaleY(1);
+}
+
+.educationMeta {
+  text-align: left;
+}
+
+.year {
+  font-size: 1.25rem;
+  font-weight: var(--fontWeightBold);
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.educationContent {
+  position: relative;
+}
+
+.degree {
+  font-size: 1.8rem;
+  margin-bottom: var(--space-m);
+  color: var(--text);
+  font-weight: var(--fontWeightBold);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.institution {
+  font-size: 1.4rem;
+  color: var(--textLight);
+  font-weight: var(--fontWeightMedium);
+  letter-spacing: -0.01em;
+}
+
+/* Responsive tweaks for smaller screens */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 32px;
+  }
+  
+  .positionItem,
+  .educationItem {
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience {
+    padding: 64px 16px;
+  }
+
+  .timeline,
+  .education {
+    gap: 40px;
+    margin-top: 32px;
+  }
+
+  .companyItem,
+  .educationItem {
+    padding: 40px;
+    margin-bottom: 24px;
+  }
+
+  .positionItem,
+  .educationItem {
+    gap: 24px;
+  }
+
+  .positions {
+    gap: 24px;
+  }
+
+  .mainTitle {
+    font-size: 3rem;
+  }
+
+  .companyName {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-l);
+  }
+
+  .role {
+    font-size: 1.4rem;
+  }
+
+  .degree {
+    font-size: 1.5rem;
+  }
+
+  .company,
+  .institution {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+
+  .period,
+  .year {
+    font-size: 1.1rem;
+  }
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .companyItem,
+[data-theme="dark"] .educationItem {
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .companyItem:hover,
+[data-theme="dark"] .educationItem:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] .positionItem {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
