@@ -110,24 +110,34 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
                   ))}
                 </div>
               </Heading>
+              <div className={styles.cta}>
+                <RouterLink
+                  to="/#contact"
+                  className={styles.button}
+                  data-status={status}
+                  onClick={handleScrollClick}
+                >
+                  Book a Call
+                </RouterLink>
+              </div>
             </header>
             <RouterLink
-              to="/#project-1"
+              to="/#about"
               className={styles.scrollIndicator}
               data-status={status}
               data-hidden={scrollIndicatorHidden}
               onClick={handleScrollClick}
             >
-              <VisuallyHidden>Scroll to projects</VisuallyHidden>
+              <VisuallyHidden>Scroll to about</VisuallyHidden>
             </RouterLink>
             <RouterLink
-              to="/#project-1"
+              to="/#about"
               className={styles.mobileScrollIndicator}
               data-status={status}
               data-hidden={scrollIndicatorHidden}
               onClick={handleScrollClick}
             >
-              <VisuallyHidden>Scroll to projects</VisuallyHidden>
+              <VisuallyHidden>Scroll to about</VisuallyHidden>
               <svg
                 aria-hidden
                 stroke="currentColor"
