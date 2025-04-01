@@ -105,6 +105,7 @@
 }
 
 .word {
+  font-size: calc((64 / 10) * 1rem);
   position: relative;
   display: flex;
   flex-shrink: 0;
